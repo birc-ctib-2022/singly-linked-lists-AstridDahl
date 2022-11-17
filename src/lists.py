@@ -59,6 +59,7 @@ def drop(x: LList[T], k: int) -> LList[T]:
     Link(2, None)
     """
     for _ in range(k):
+        if x == None: return x
         x = x.tail
     return x
 
@@ -80,10 +81,10 @@ def take(x: LList[T], k: int) -> LList[T]:
     """
     lst = None
     for _ in range(k):
+        if x == None: return x
         lst = Link((x.head), lst)
         x = x.tail
     return reverse(lst)
-
 
 def reverse(x: LList[T]) -> LList[T]:
     """
